@@ -1,10 +1,12 @@
 import { Sequelize } from 'sequelize';
+import Database from 'better-sqlite3';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
+  dialectModule: Database,
   storage: './database.sqlite',
   logging: false
 });
